@@ -191,7 +191,18 @@ Check BGP status from swtich:
   10.74.45.101         65420       45       45    0       1 00:34:40 Established
   10.74.45.102         65420        0        0    0       0 0145h31m Connect 
 ```
-
+Check BGP in calico pod:
+```
+tanzu@TST-Tazu-BootSrap:~/talos/calico$ kubectl exec -it -n calico-system calico-node-25s7q -- birdcl show protocols
+Defaulted container "calico-node" out of: calico-node, flexvol-driver (init), ebpf-bootstrap (init), install-cni (init)
+BIRD v0.3.3+birdv1.6.8 ready.
+name     proto    table    state  since       info
+static1  Static   master   up     13:34:55    
+kernel1  Kernel   master   up     13:34:55    
+device1  Device   master   up     13:34:55    
+direct1  Direct   master   up     13:34:55    
+Node_10_74_45_1 BGP      master   up     13:54:33    Established  
+```
 Check route:
 ```
 <GZP-T_TOR1>display ip routing-table vpn-instance VPN-QV-OM protocol bgp
