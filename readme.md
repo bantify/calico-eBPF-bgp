@@ -10,7 +10,7 @@ cluster:
 ```
 Install tigera operator:
 
-Please check the bug: https://github.com/aadhilam/k8-networking-calico-containerlab/blob/master/containerlab/08-calico-bgp-lb/calico-cni-config/custom-resources.yaml
+Please check the bug: https://github.com/siderolabs/talos/discussions/12871
 ```
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.4/manifests/tigera-operator.yaml
 ```
